@@ -1,0 +1,60 @@
+buildscript {
+    ext {
+        springBootVersion = '1.4.7.RELEASE'
+    }
+    repositories {
+        mavenLocal()
+        mavenCentral()
+        jcenter()
+        maven { url "http://repo.spring.io/release" }
+        maven { url "http://repo.spring.io/milestone" }
+        maven { url "http://repo.spring.io/snapshot" }
+    }
+    dependencies {
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
+        classpath 'com.eriwen:gradle-js-plugin:1.12.1'
+        classpath 'com.eriwen:gradle-css-plugin:1.11.1'
+    }
+}
+
+apply plugin: 'java'
+apply plugin: 'application'
+apply plugin: 'eclipse'
+apply plugin: 'idea'
+apply plugin: 'org.springframework.boot'
+apply plugin: 'war'
+apply plugin: "com.eriwen.gradle.js"
+apply plugin: "com.eriwen.gradle.css"
+
+group = 'com.reserve'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+mainClassName = "com.reserve.Photographer.Application"
+
+configurations {
+    providedRuntime
+}
+compileJava {
+    options.compilerArgs << "-Xlint:all" << "-Werror"
+}
+
+ext {
+    springCloudVersion = 'Camden.SR7'
+}
+
+dependencies {
+    compile("org.springframework.boot:spring-boot-starter")
+    compile("org.springframework.boot:spring-boot-starter-web")
+    compile('org.springframework.boot:spring-boot-starter-thymeleaf')
+    compile('org.flywaydb:flyway-core')
+    runtime('mysql:mysql-connector-java')
+    testCompile('org.springframework.boot:spring-boot-starter-test')
+}
+
+dependencyManagement {
+    imports {
+        mavenBom "org.springframework.cloud:spring-cloud-dependencies:${springCloudVersion}"
+    }
+}
+

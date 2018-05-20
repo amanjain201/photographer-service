@@ -1,0 +1,25 @@
+spring:
+    application:
+        name: apiservice
+    datasource: 
+        driverClassName: com.mysql.jdbc.Driver
+        url: jdbc:mysql://${LOCAL_HOST:localhost}:3306/PHOTO?autoreconnect=true&useSSL=false
+        username: "${DB_USERNAME:root}"
+        password: "${DB_PASSWORD:aman}"
+        testOnBorrow: true
+        testWhileIdle: true
+        timeBetweenEvictionRunsMillis: 60000
+        minEvictableIdleTimeMillis: 30000
+        validationQuery: SELECT 1
+        max-active: 15
+        max-idle: 10
+        max-wait: 8000    
+flyway:
+     url: jdbc:mysql://${SRSDB_HOST:localhost}:3306/mysql
+     schemas: PHOTO
+     user: "${DB_USERNAME:root}"
+     password: "${DB_PASSWORD:aman}" 
+     placeholderReplacement: false
+     locations: dbmigration
+server:
+    port: 8081

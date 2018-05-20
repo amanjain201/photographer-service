@@ -1,0 +1,90 @@
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+    <head>
+        <title>PhotoManiac</title>
+    <div th:replace="meta-includes"></div>
+    <div th:replace="css-includes"></div>
+</head>
+<body> 
+    <div th:replace="navigation"></div>
+
+    <main>
+        
+        <div class="main-section">
+        <div class="row photo" style="height:200px;">
+            <div class="col s12 m7">
+                <div class="card">
+                    <div class="card-image">
+                        <img src="assets/images/p1.jpg"/>
+                        <span class="card-title">RAMESH</span>
+                    </div>
+                    <div class="card-content">
+                        <p>One of the best photographer in Chennai. Has received awards in wildlife photography.</p>
+                    </div>
+                    <div class="card-action row">
+                        
+                        <div class="input field col s6">
+                            <span><i class="material-icons">date_range</i></span>
+                            <input type="text" class="datepicker" id="date1" style="width:143px;"/>
+                        </div>
+                        <div class="col s6">
+                            <a class="right" href="#" style="padding-top:33px;margin-right:5px;" id="p1" onclick="doBooking('p1');">Book</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row photo" style="height:200px;">
+            <div class="col s12 m7">
+                <div class="card">
+                    <div class="card-image">
+                        <img src="assets/images/p2.jpg"/>
+                        <span class="card-title">MAHESH</span>
+                    </div>
+                    <div class="card-content">
+                        <p>Has an excellent photgraphy of capturing unseen natural views.He is one of the top-rated 
+                        photographers in Mumbai.</p>
+                    </div>
+                    <div class="card-action row">
+                        
+                        <div class="input field col s6">
+                            <span><i class="material-icons">date_range</i></span>
+                            <input type="text" class="datepicker" id="date2" style="width:143px;"/>
+                        </div>
+                        <div class="col s6">
+                            <a class="right" href="#" style="padding-top:33px;margin-right:5px;" id="p2" onclick="doBooking('p2');">Book</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div> 
+        <div class="row photo" style="height:200px;">
+            <div class="col s12 m7">
+                <div class="card">
+                    <div class="card-image">
+                        <img src="assets/images/p3.jpg"/>
+                        <span class="card-title">SURESH</span>
+                    </div>
+                    <div class="card-content">
+                        <p>Clicking birthday,wedding,anniversary stills is something this guy is expert in. Best around 
+                         for business for occassions, he is from Kolkata.</p>
+                    </div>
+                    <div class="card-action row">
+                        
+                        <div class="input field col s6">
+                            <span><i class="material-icons">date_range</i></span>
+                            <input type="text" class="datepicker" id="date3" style="width:143px;"/>
+                        </div>
+                        <div class="col s6">
+                            <a class="right" href="#" style="padding-top:33px;margin-right:5px;" id="p3" onclick="doBooking('p3');">Book</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>    
+        </div>
+                
+    </main>
+    <div th:replace="js-includes"></div>
+  <script type="text/javascript" src="assets/js/photographer.js"></script>
+</body>
+</html>

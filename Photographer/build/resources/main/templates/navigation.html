@@ -1,0 +1,50 @@
+   
+    <div class="navbar-fixed">
+        <nav class="light-blue darken-1" role="navigation">
+            <div class="nav-wrapper">  
+                <a href="#!" class="brand-logo"><span class="photo-logo"></span></a>
+                <ul class="left">
+                    <li><a href="#" data-activates="slide-out" class="button-collapse"><i class="material-icons">menu</i></a></li>
+                </ul>
+            </div>
+        </nav>
+    </div>
+    <div id="slide-out" class="side-nav fixed left-nav ">
+        <ul  class="left-nav-custom">
+            <ul id="side_nav_help" class="collapsible" data-collapsible="accordion">
+                <li>
+                    <a class="collapsible-header waves-effect" href="photographer">
+                        <i class="material-icons">camera_alt</i>
+                        <span class="grey-text text-darken-1">Photographers</span>
+                    </a>
+                </li>
+            </ul>
+            <ul id="side_nav_domain" class="collapsible" data-collapsible="accordion">
+                <li>
+                    <a class="collapsible-header waves-effect" href="status">
+                        <i class="material-icons">assignment</i>
+                        <span class="grey-text text-darken-1">Booking Status</span>
+                    </a>
+                </li>
+            </ul>
+            <ul id="side_nav_domain" class="collapsible" data-collapsible="accordion">
+                <li>
+                    <a class="collapsible-header waves-effect" href="/">
+                        <i class="material-icons">power_settings_new</i>
+                        <span class="grey-text text-darken-1">Logout</span>
+                    </a>
+                </li>
+            </ul>
+        </ul>
+        <div class="side-nav-footer">
+            <span class="grey-text text-lighten-2">© 2018 <a class="grey-text text-lighten-2" href="#">Photomaniac Inc.</a> </span> 
+        </div>
+    </div>
+    <div th:replace="js-includes"></div>
+    <script>
+         $('.button-collapse').sideNav({
+      menuWidth: 300, // Default is 240
+      edge: 'left'
+    }
+  );
+    </script>
