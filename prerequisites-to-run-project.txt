@@ -1,0 +1,7 @@
+1. Requires JDK 8
+2. You need to have MySql 5.7.x installed and running on port 3306
+3. Set the username and password of mysql in src/main/resources/application.yaml in photographerapiservice
+4. Set host to localhost:8081 in host.js in Photographer project
+5. chmod +x gradlew -> in both Photographer folder and photographerapiservice folder
+6. ./gradlew clean build
+7. java -jar build/libs/*.jar
